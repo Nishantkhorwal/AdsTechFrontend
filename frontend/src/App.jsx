@@ -8,6 +8,9 @@ import ContentStrategy from "./pages/ContentStrategy";
 import PerformanceMarketing from "./pages/PerformanceMarketing";
 import OutdoorPrint from "./pages/OutdoorPrint";
 import BillboardAdvertising from "./pages/BillboardsAdvertising";
+import RetailFabrication from "./pages/RetailAndFabrication";
+import EventAndManagement from "./pages/EventAndManagement";
+import Portfolio from "./pages/Portfolio";
 
 export default function App() {
   return (
@@ -39,9 +42,11 @@ export default function App() {
 
         {/* Outdoor And Print */}
         <Route path="/outdoor-print" element={<OutdoorPrint />} />
-        <Route path="/outdoor-print/billboard-design" element={<BillboardAdvertising />} />
-
-
+        <Route path="/retail&fabrication" element={<RetailFabrication />} />
+        <Route path="/event&management" element={<EventAndManagement />} />
+        
+  
+        <Route path="/portfolio" element={<Portfolio />} />
         {/* <Route path="/outdoor-print" element={<OutdoorPrint />} />
         <Route path="/events-retail" element={<EventsRetail />} /> */}
       </Routes>

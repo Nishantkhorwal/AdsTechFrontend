@@ -2,29 +2,30 @@ import { useEffect, useState } from 'react';
 import "../App.css"
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   
 const portfolioItems = [
     {
-      title: 'Brand Campaign',
-      category: 'Digital',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0'
+      title: 'Outdoor Activation',
+      category: 'Print & Outdoor',
+      image: 'portfolio/Paras3.png'
     },
     {
       title: 'Outdoor Activation',
       category: 'Print & Outdoor',
-      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee'
+      image: 'portfolio/TruckAd.png'
     },
     {
       title: 'Event Marketing',
       category: 'Events',
-      image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30'
+      image: 'portfolio/Event1.png'
     },
     {
-      title: 'Social Strategy',
-      category: 'Digital',
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c'
+      title: 'Outdoor Activation',
+      category: 'Print & Outdoor',
+      image: 'portfolio/MetroAd.png'
     }
   ];
   
@@ -240,9 +241,9 @@ const portfolioItems = [
           </div>
 
           <div className="text-center mt-12">
-            <button className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50">
-              View All Projects
-            </button>
+            <Link to="/portfolio" className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50">
+              View Portfolio
+            </Link>
           </div>
 
         </div>
