@@ -3,8 +3,10 @@ import "../App.css"
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import ContactFormModal from '../components/ContactForm';
 
 export default function Home() {
+  const [contactOpen, setContactOpen] = useState(false);
   
 const portfolioItems = [
     {
@@ -35,7 +37,7 @@ const portfolioItems = [
   return (
     <div className="w-full bg-black text-white overflow-hidden">
       {/* Navigation */}
-      <Navbar/>
+      <Navbar onGetStarted={() => setContactOpen(true)} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -56,11 +58,10 @@ const portfolioItems = [
                 Transform your vision into powerful marketing campaigns that captivate, engage, and convert. We're your creative partner for every channel.
               </p>
               <div className="flex gap-4 pt-4">
-                <button className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50">
+                <button
+                onClick={() => setContactOpen(true)}
+                className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50">
                   Start Project
-                </button>
-                <button className="px-8 py-4 border-2 border-orange-600 hover:bg-orange-600/10 font-bold transition-all">
-                  Learn More
                 </button>
               </div>
             </div>
@@ -106,18 +107,21 @@ const portfolioItems = [
           <div className="grid md:grid-cols-3 gap-6">
   {[
     {
-      title: 'Digital Marketing',
-      description: 'SEO, SEM, Social Media & Content strategies that drive measurable results and sustainable growth.',
+      title: 'Retail & Fabrication',
+      description: 'Experiential retail solutions that engage customers, elevate brand presence, and create memorable in-store experiences.',
+      link: '/retail&fabrication',
       icon: '01'
     },
     {
       title: 'Outdoor & Print',
       description: 'Strategic outdoor advertising and print campaigns that create lasting impressions in the physical world.',
+      link: '/outdoor-print',
       icon: '02'
     },
     {
-      title: 'Events & Retail',
-      description: 'Experiential marketing events and retail activations that bring your brand to life.',
+      title: 'Events & Management',
+      description: 'Experiential marketing events that bring your brand to life.',
+      link: '/event&management',
       icon: '03'
     }
   ].map((service, idx) => (
@@ -156,12 +160,12 @@ const portfolioItems = [
 
       {/* CTA */}
       <div className="mt-6 flex items-center text-orange-500 font-bold cursor-pointer gap-2">
-        <span className="group-hover:tracking-wider transition-all duration-300">
-          Explore
-        </span>
-        <span className="text-xl transform group-hover:translate-x-2 transition-transform duration-300">
-          →
-        </span>
+        <Link className=' transform group-hover:translate-x-2 transition-transform duration-300' to={service.link}>
+   
+          Explore →
+      
+        </Link>
+        
       </div>
 
     </div>
@@ -316,6 +320,10 @@ const portfolioItems = [
       </section>
 
       {/* Footer */}
+      <ContactFormModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
       <Footer/>
     </div>
   );

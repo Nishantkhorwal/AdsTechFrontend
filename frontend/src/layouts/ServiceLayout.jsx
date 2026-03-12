@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ContactFormModal from "../components/ContactForm";
 
 export default function ServiceLayout({
   title,
@@ -17,9 +19,10 @@ export default function ServiceLayout({
   caseStudy,
   faqs = []
 }) {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <div className="w-full bg-black text-white overflow-hidden">
-      <Navbar />
+      <Navbar onGetStarted={() => setContactOpen(true)} />
 
       {/* ================= HERO ================= */}
       <section className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative">
@@ -255,14 +258,17 @@ export default function ServiceLayout({
           </p>
 
           <Link
-            to="/contact"
+            onClick={() => setContactOpen(true)}
             className="inline-block px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition"
           >
             Start Your Project
           </Link>
         </div>
       </section>
-
+     <ContactFormModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
       <Footer />
     </div>
   );

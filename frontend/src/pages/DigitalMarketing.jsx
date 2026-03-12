@@ -26,14 +26,14 @@ Whether you're looking to dominate search rankings, reduce customer acquisition 
           link: "/digital-marketing/seo"
         },
         {
-          title: "Google & Meta Ads Management",
+          title: "Performance Marketing",
           desc: "Performance-driven PPC campaigns including Google Search, Shopping, Performance Max, and Meta ads optimized for maximum ROAS.",
-          link: "/digital-marketing/google-ads"
+          link: "/digital-marketing/performance-marketing"
         },
         {
           title: "Social Media Marketing",
           desc: "Content creation, paid social scaling, and engagement strategies that grow your audience and turn followers into customers.",
-          link: "/digital-marketing/social-media-marketing"
+          link: "/digital-marketing/social-media"
         }
       ]}
 

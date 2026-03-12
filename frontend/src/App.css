@@ -73,4 +73,18 @@
   --sidebar-ring: #FF8C00;
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease forwards;
+}
 

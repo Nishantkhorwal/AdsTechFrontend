@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ContactFormModal from '../components/ContactForm';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
+   const [contactOpen, setContactOpen] = useState(false);
 
   const services = [
     {
@@ -241,7 +243,7 @@ export default function Portfolio() {
   return (
     <div className="w-full bg-black text-white overflow-hidden">
       {/* Navigation */}
-      <Navbar />
+      <Navbar onGetStarted={() => setContactOpen(true)} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -550,6 +552,10 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
+      <ContactFormModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
       <Footer />
     </div>
   );

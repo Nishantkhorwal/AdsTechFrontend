@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.css"
@@ -11,9 +12,14 @@ import BillboardAdvertising from "./pages/BillboardsAdvertising";
 import RetailFabrication from "./pages/RetailAndFabrication";
 import EventAndManagement from "./pages/EventAndManagement";
 import Portfolio from "./pages/Portfolio";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsAndCondition";
 
 export default function App() {
+  
   return (
+
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -47,9 +53,13 @@ export default function App() {
         
   
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-condition" element={<TermsConditions />} />
         {/* <Route path="/outdoor-print" element={<OutdoorPrint />} />
         <Route path="/events-retail" element={<EventsRetail />} /> */}
       </Routes>
     </Router>
+    </>
+    
   );
 }

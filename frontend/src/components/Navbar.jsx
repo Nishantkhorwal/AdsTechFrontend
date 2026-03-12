@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import "../App.css"
 
-function Navbar() {
+function Navbar({ onGetStarted }) {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesHovered, setServicesHovered] = useState(false);
@@ -100,11 +100,8 @@ function Navbar() {
           <div className="flex items-center justify-between">
             
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AD</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">ADSTECH</span>
+            <div className="flex items-center">
+              <img className='w-40' src='/logo.png'></img>
             </div>
 
             {/* Desktop Navigation */}
@@ -176,7 +173,9 @@ function Navbar() {
 
             {/* CTA Button and Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
-              <button className="hidden md:block px-6 py-2 bg-orange-600 hover:bg-orange-700 text-black font-semibold transition-colors">
+              <button 
+              onClick={onGetStarted}
+              className="hidden md:block px-6 py-2 bg-orange-600 hover:bg-orange-700 text-black font-semibold transition-colors">
                 Get Started
               </button>
               <button
@@ -239,7 +238,9 @@ function Navbar() {
                   )}
                 </div>
               ))}
-              <button className="w-full mt-4 px-6 py-2 bg-orange-600 hover:bg-orange-700 text-black font-semibold transition-colors">
+              <button 
+              onClick={onGetStarted}
+              className="w-full mt-4 px-6 py-2 bg-orange-600 hover:bg-orange-700 text-black font-semibold transition-colors">
                 Get Started
               </button>
             </div>

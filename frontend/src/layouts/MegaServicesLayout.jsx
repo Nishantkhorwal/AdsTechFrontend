@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import ContactFormModal from '../components/ContactForm';
 
 export default function MegaServiceLayout({
   title,
@@ -17,10 +18,11 @@ export default function MegaServiceLayout({
   process = []
 }) {
   const [expandedFaq, setExpandedFaq] = useState(null);
+   const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <div className="w-full bg-black text-white overflow-hidden">
-      <Navbar />
+      <Navbar onGetStarted={() => setContactOpen(true)} />
 
       {/* HERO SECTION */}
       <section className="pt-32 pb-24 px-4 md:px-8 relative overflow-hidden">
@@ -34,14 +36,12 @@ export default function MegaServiceLayout({
             <p className="text-gray-300 text-lg leading-relaxed">{subtitle}</p>
             <div className="flex gap-4 pt-4">
               <Link
-                to="/contact"
+                onClick={() => setContactOpen(true)}
                 className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition duration-300 transform hover:scale-105"
               >
                 Get Started
               </Link>
-              <button className="px-8 py-4 border-2 border-orange-600 text-orange-600 hover:bg-orange-600/10 font-bold transition duration-300">
-                Learn More
-              </button>
+              
             </div>
           </div>
 
@@ -255,7 +255,7 @@ export default function MegaServiceLayout({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact"
+                onClick={() => setContactOpen(true)}
                 className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition duration-300 transform hover:scale-105 rounded-lg"
               >
                 Start Your Project
@@ -264,6 +264,11 @@ export default function MegaServiceLayout({
           </div>
         </div>
       </section>
+
+      <ContactFormModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
 
       <Footer />
     </div>

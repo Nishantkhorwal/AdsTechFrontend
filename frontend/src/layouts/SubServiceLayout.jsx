@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ContactFormModal from "../components/ContactForm";
 
 export default function SubServiceLayout({
   title,
@@ -17,9 +19,10 @@ export default function SubServiceLayout({
   parentService,
   parentLink
 }) {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <div className="w-full bg-[#0b0f17] text-white overflow-hidden">
-      <Navbar />
+      <Navbar onGetStarted={() => setContactOpen(true)} />
 
       {/* ================= HERO ================= */}
       <section className="relative pt-32 pb-32 px-6 bg-gradient-to-b from-black to-[#0b0f17]">
@@ -247,13 +250,17 @@ export default function SubServiceLayout({
             Let’s create a strategy built for measurable growth.
           </p>
           <Link
-            to="/contact"
+            onClick={() => setContactOpen(true)}
             className="px-10 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold rounded-lg transition"
           >
             Request Consultation
           </Link>
         </div>
       </section>
+      <ContactFormModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
 
       <Footer />
     </div>
