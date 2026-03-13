@@ -56,8 +56,8 @@ function Footer() {
               <h4 className="font-bold mb-4 text-sm">SERVICES</h4>
               <ul className="space-y-2 text-xs text-gray-400">
                 <li><Link to="/digital-marketing" className="hover:text-orange-500 transition-colors">Digital Marketing</Link></li>
-                <li><Link to="/outdoor-print" className="hover:text-orange-500 transition-colors">Outdoor & Print</Link></li>
-                <li><Link to="/event&management" className="hover:text-orange-500 transition-colors">Events & Management</Link></li>
+                <li><Link to="/outdoor-print" className="hover:text-orange-500 transition-colors">Outdoor</Link></li>
+                <li><Link to="/event&management" className="hover:text-orange-500 transition-colors">Events & Activation</Link></li>
                 <li><Link to="/retail&fabrication" className="hover:text-orange-500 transition-colors">Retail & Fabrication</Link></li>
               </ul>
             </div>
@@ -85,10 +85,6 @@ function Footer() {
             <div>
               <h4 className="font-bold mb-4 text-sm">CONTACT</h4>
               <ul className="space-y-2 text-xs text-gray-400">
-                <li className="hover:text-orange-500 transition-colors">
-                  <span className="font-semibold text-white">Phone:</span><br/>
-                  +91 9718 44 77 88
-                </li>
                 <li className="hover:text-orange-500 transition-colors">
                   <span className="font-semibold text-white">Email:</span><br/>
                   info@adstechindia.uk

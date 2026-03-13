@@ -6,7 +6,15 @@ import { Link } from 'react-router-dom';
 import ContactFormModal from '../components/ContactForm';
 
 export default function Home() {
+  const API_URL = import.meta.env.VITE_API_URL;
   const [contactOpen, setContactOpen] = useState(false);
+    const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    project: "",
+    message: ""
+  });
+
   
 const portfolioItems = [
     {
@@ -30,6 +38,43 @@ const portfolioItems = [
       image: 'portfolio/MetroAd.png'
     }
   ];
+
+  const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch(`${API_URL}/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        project: "",
+        message: ""
+      });
+    } else {
+      alert("Failed to send message.");
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert("Error sending message");
+  }
+};
+
   
 
   
@@ -106,22 +151,23 @@ const portfolioItems = [
 
           <div className="grid md:grid-cols-3 gap-6">
   {[
+    
+    {
+      title: 'Outdoor',
+      description: 'Strategic outdoor advertising and print campaigns that create lasting impressions in the physical world.',
+      link: '/outdoor-print',
+      icon: '01'
+    },
+    {
+      title: 'Events & Activation',
+      description: 'Experiential marketing events that bring your brand to life.',
+      link: '/event&management',
+      icon: '02'
+    },
     {
       title: 'Retail & Fabrication',
       description: 'Experiential retail solutions that engage customers, elevate brand presence, and create memorable in-store experiences.',
       link: '/retail&fabrication',
-      icon: '01'
-    },
-    {
-      title: 'Outdoor & Print',
-      description: 'Strategic outdoor advertising and print campaigns that create lasting impressions in the physical world.',
-      link: '/outdoor-print',
-      icon: '02'
-    },
-    {
-      title: 'Events & Management',
-      description: 'Experiential marketing events that bring your brand to life.',
-      link: '/event&management',
       icon: '03'
     }
   ].map((service, idx) => (
@@ -267,27 +313,39 @@ const portfolioItems = [
               </p>
             </div>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <input 
-                  type="text" 
-                  placeholder="Your Name" 
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
                   className="w-full px-6 py-3 bg-black border border-orange-900/30 hover:border-orange-600/50 focus:border-orange-600 focus:outline-none transition-colors text-white"
                 />
                 <input 
-                  type="email" 
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Your Email" 
                   className="w-full px-6 py-3 bg-black border border-orange-900/30 hover:border-orange-600/50 focus:border-orange-600 focus:outline-none transition-colors text-white"
                 />
               </div>
               <input 
-                type="text" 
+                type="text"
+                name="project"
+                value={formData.project}
+                onChange={handleChange}
                 placeholder="Project Title" 
                 className="w-full px-6 py-3 bg-black border border-orange-900/30 hover:border-orange-600/50 focus:border-orange-600 focus:outline-none transition-colors text-white"
               />
               <textarea 
-                placeholder="Tell us about your project..." 
-                rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your project..."
+                  rows="5"
                 className="w-full px-6 py-3 bg-black border border-orange-900/30 hover:border-orange-600/50 focus:border-orange-600 focus:outline-none transition-colors text-white resize-none"
               />
               <div className="flex justify-center pt-4">
@@ -301,11 +359,6 @@ const portfolioItems = [
             </form>
 
             <div className="mt-12 pt-12 border-t border-orange-900/30 grid md:grid-cols-3 gap-8">
-              <div>
-                <p className="text-orange-500 font-bold text-sm mb-2">PHONE</p>
-                <p className="text-white">+91 9718 44 77 88</p>
-                <p className="text-gray-400">+91 9716 44 77 88</p>
-              </div>
               <div>
                 <p className="text-orange-500 font-bold text-sm mb-2">EMAIL</p>
                 <p className="text-white">info@adstechindia.uk</p>
