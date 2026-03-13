@@ -165,18 +165,6 @@ With expertise across multiple outdoor mediums and deep relationships with premi
       },
 
       {
-      title: "Rickshaw Branding",
-      description: "Cycle rickshaw advertising that delivers strong local visibility in high-footfall markets and residential neighborhoods.",
-      image: "images/rikshaw.jfif?q=80&w=1200&auto=format&fit=crop",
-      points: [
-      "Back panel display ads in high-traffic areas",
-      "Ideal for retail promotions and local campaigns",
-      "Strong engagement in residential neighborhoods",
-      "Grassroots community brand building"
-      ]
-      },
-
-      {
       title: "Metro Train Wrap Branding",
       description: "Full or partial branding across metro train coaches creating city-wide visibility during peak commute times.",
       image: "/images/metro2.png?q=80&w=1200&auto=format&fit=crop?q=80&w=1200&auto=format&fit=crop",
