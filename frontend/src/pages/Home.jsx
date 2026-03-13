@@ -334,7 +334,7 @@ const handleSubmit = async (e) => {
               </div>
               <input 
                 type="text"
-                name="project"
+                name="projectTitle"
                 value={formData.projectTitle}
                
                 onChange={handleChange}
