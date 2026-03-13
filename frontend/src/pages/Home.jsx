@@ -11,7 +11,7 @@ export default function Home() {
     const [formData, setFormData] = useState({
     name: "",
     email: "",
-    project: "",
+    projectTitle: "",
     message: ""
   });
 
@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
       setFormData({
         name: "",
         email: "",
-        project: "",
+        projectTitle: "",
         message: ""
       });
     } else {
@@ -335,7 +335,8 @@ const handleSubmit = async (e) => {
               <input 
                 type="text"
                 name="project"
-                value={formData.project}
+                value={formData.projectTitle}
+               
                 onChange={handleChange}
                 placeholder="Project Title" 
                 className="w-full px-6 py-3 bg-black border border-orange-900/30 hover:border-orange-600/50 focus:border-orange-600 focus:outline-none transition-colors text-white"
