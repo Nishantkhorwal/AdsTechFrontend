@@ -91,7 +91,7 @@ function Footer() {
                 </li>
                 <li className="hover:text-orange-500 transition-colors">
                   <span className="font-semibold text-white">Location:</span><br/>
-                  Gurgram, India
+                  101, 1st Floor, Vipul Business Park, Sohna Road, Sector-48, Gurugram, Haryana-122018
                 </li>
               </ul>
             </div>

@@ -366,7 +366,7 @@ const handleSubmit = async (e) => {
               </div>
               <div>
                 <p className="text-orange-500 font-bold text-sm mb-2">LOCATION</p>
-                <p className="text-gray-400 text-sm">Unit-101, 1st Floor, Vipul Business Park<br/>Sohna Road, Sector-48, Gurgram</p>
+                <p className="text-gray-400 text-sm">101, 1st Floor, Vipul Business Park, <br/>Sohna Road, Sector-48, Gurugram, Haryana-122018</p>
               </div>
             </div>
           </div>
