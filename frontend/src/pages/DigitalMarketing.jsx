@@ -26,14 +26,14 @@ Whether you're looking to dominate search rankings, reduce customer acquisition 
           link: "/digital-marketing/seo"
         },
         {
-          title: "Performance Marketing",
-          desc: "Performance-driven PPC campaigns including Google Search, Shopping, Performance Max, and Meta ads optimized for maximum ROAS.",
-          link: "/digital-marketing/performance-marketing"
+          title: "Web Development",
+          desc: "High-performance websites and web applications built with modern technologies, optimized for speed, scalability, SEO, and seamless user experience.",
+          link: "/digital-marketing/web-development"
         },
         {
-          title: "Social Media Marketing",
-          desc: "Content creation, paid social scaling, and engagement strategies that grow your audience and turn followers into customers.",
-          link: "/digital-marketing/social-media"
+          title: "Graphic Designing",
+          desc: "Creative visual design for social media, marketing campaigns, branding, and promotional content that strengthens brand identity and boosts engagement.",
+          link: "/digital-marketing/graphic-design"
         }
       ]}
 

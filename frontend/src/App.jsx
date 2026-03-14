@@ -14,6 +14,8 @@ import EventAndManagement from "./pages/EventAndManagement";
 import Portfolio from "./pages/Portfolio";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsAndCondition";
+import WebDevelopment from "./pages/WebDevelopment";
+import GraphicDesign from "./pages/GraphicDesign";
 
 export default function App() {
   
@@ -44,6 +46,14 @@ export default function App() {
         <Route
           path="/digital-marketing/performance-marketing"
           element={<PerformanceMarketing />}
+        />
+        <Route
+          path="/digital-marketing/web-development"
+          element={<WebDevelopment />}
+        />
+        <Route
+          path="/digital-marketing/graphic-design"
+          element={<GraphicDesign />}
         />
 
         {/* Outdoor And Print */}

@@ -21,6 +21,8 @@ function Navbar({ onGetStarted }) {
       title: 'Digital Marketing',
       link: '/digital-marketing',
       items: [
+        { label: 'Web Development', link: '/digital-marketing/web-development' },
+        { label: 'Graphic Designing', link: '/digital-marketing/graphic-design' },
         { label: 'SEO & SEM', link: '/digital-marketing/seo' },
         { label: 'Social Media', link: '/digital-marketing/social-media' },
         { label: 'Content Strategy', link: '/digital-marketing/content-strategy' },
