@@ -105,7 +105,7 @@ export async function handler(event) {
 
      await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "khorwalnishant@gmail.com",
+      to: "info@adstechindia.uk",
       subject: `New Project Inquiry: ${projectTitle}`,
       html: `
         <h2>New Website Lead</h2>
