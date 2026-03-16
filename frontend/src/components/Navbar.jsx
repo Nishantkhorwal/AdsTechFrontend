@@ -30,7 +30,7 @@ function Navbar({ onGetStarted }) {
       ] 
     },
     { 
-      title: 'Outdoor & Print',
+      title: 'Outdoor',
       link: '/outdoor-print',
       items: [] 
     },
@@ -41,7 +41,7 @@ function Navbar({ onGetStarted }) {
       ] 
     },
     { 
-      title: 'Events And Management',
+      title: 'Events And Activation',
       link: '/event&management',
       items: [
       ] 
