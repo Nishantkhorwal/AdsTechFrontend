@@ -116,6 +116,16 @@ const portfolioItems = [
     {
       title: 'Outdoor',
       category: 'Outdoor',
+      image: 'portfolio2/Outdoor81.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor82.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
       image: 'portfolio/TruckAd.png'
     },
     {

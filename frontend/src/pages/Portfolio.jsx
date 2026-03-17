@@ -540,11 +540,6 @@ export default function Portfolio() {
       image: 'portfolio2/Outdoor64.jpeg?w=800&h=400&fit=crop',
     },
     {
-      id: 81,
-      category: 'Outdoor Advertising',
-      image: 'portfolio2/Outdoor65.jpeg?w=800&h=400&fit=crop',
-    },
-    {
       id: 82,
       category: 'Outdoor Advertising',
       image: 'portfolio2/Outdoor66.jpeg?w=800&h=400&fit=crop',
@@ -561,11 +556,6 @@ export default function Portfolio() {
     },
     {
       id: 85,
-      category: 'Outdoor Advertising',
-      image: 'portfolio2/Outdoor69.jpeg?w=800&h=400&fit=crop',
-    },
-    {
-      id: 86,
       category: 'Outdoor Advertising',
       image: 'portfolio2/Outdoor70.jpeg?w=800&h=400&fit=crop',
     }
