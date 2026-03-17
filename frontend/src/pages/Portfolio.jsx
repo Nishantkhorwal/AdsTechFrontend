@@ -1,9 +1,8 @@
-'use client';
-
-import { useState } from 'react';
+import {   useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactFormModal from '../components/ContactForm';
+import LazyImage from '../components/LazyImage';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -34,134 +33,544 @@ export default function Portfolio() {
   ];
 
   const portfolioItems = [
+
+    {
+      id: 87,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor71.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 88,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor72.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 89,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor73.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 90,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor74.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 91,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor75.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 92,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor76.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 93,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor77.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 94,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor78.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 95,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor79.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 96,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor80.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 97,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor81.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 98,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor82.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 99,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event1.png?w=800&h=400&fit=crop',
+    },
+    {
+      id: 100,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event2.png?w=800&h=400&fit=crop',
+    },
+    {
+      id: 101,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event3.png?w=800&h=400&fit=crop',
+    },
+    {
+      id: 102,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event4.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 103,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event5.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 104,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event6.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 105,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event7.png?w=800&h=400&fit=crop',
+    },
+    {
+      id: 106,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event8.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 107,
+      category: 'Events & Activation',
+      image: 'portfolio2/Event9.jpeg?w=800&h=400&fit=crop',
+    },
     {
       id: 1,
-      title: 'Tata Unipole',
       category: 'Outdoor Advertising',
-      description: 'Multi-city outdoor advertising campaign across Delhi NCR',
       image: 'portfolio/Unipole1.png?w=800&h=400&fit=crop',
-      location: 'Delhi NCR'
     },
     {
       id: 2,
-      title: 'Honda Unipole',
       category: 'Outdoor Advertising',
-      description: 'Multi-city outdoor advertising campaign across Delhi NCR',
       image: 'portfolio/Unipole3.png?w=800&h=400&fit=crop',
-      location: 'Delhi NCR'
     },
     {
       id: 3,
-      title: 'Metro Branding Initiative',
       category: 'Outdoor Advertising',
-      description: 'Large-scale metro station and train branding project',
       image: 'portfolio/MetroAd.png?w=800&h=400&fit=crop',
-      location: 'Delhi Metro'
     },
     {
       id: 4,
-      title: 'Exhibition & Setup',
       category: 'Events & Activation',
-      description: 'Large-scale brand activation and experiential marketing event',
       image: 'portfolio/Event1.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 5,
-      title: 'Brand Activation Event',
       category: 'Events & Activation',
-      description: 'Large-scale brand activation and experiential marketing event',
       image: 'portfolio/Event2.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 6,
-      title: 'Vivo LED Gate',
       category: 'Outdoor Advertising',
-      description: 'High-impact digital LED screen advertising across premium locations',
       image: 'portfolio/GateAd.png?w=800&h=400&fit=crop',
-      location: 'Delhi NCR'
     },
     {
       id: 7,
-      title: 'Paras Hospital Campaign',
       category: 'Outdoor Advertising',
-      description: 'Pole Advertising of Paras Hospital',
       image: 'portfolio/Paras1.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 8,
-      title: 'Paras Hospital Campaign',
       category: 'Outdoor Advertising',
-      description: 'Hoarding Advertising of Paras Hospital',
       image: 'portfolio/Paras2.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 9,
-      title: 'Paras Hospital Campaign',
       category: 'Outdoor Advertising',
-      description: 'Unipole Advertising of Paras Hospital',
       image: 'portfolio/Paras3.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 10,
-      title: 'Paras Hospital Campaign',
       category: 'Outdoor Advertising',
-      description: 'LED Advertising of Paras Hospital',
       image: 'portfolio/Paras4.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon'
     },
     {
       id: 11,
-      title: 'Bus Advertisement Campaign',
       category: 'Outdoor Advertising',
-      description: 'Premium Advertisement on Bus',
       image: 'portfolio/BusAd.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
     {
       id: 12,
-      title: 'Auto Advertisement Campaign',
       category: 'Outdoor Advertising',
-      description: 'Premium Advertisement on Auto',
       image: 'portfolio/AutoAd.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
     {
       id: 13,
-      title: 'Fanta Metro Advertisement Campaign',
       category: 'Outdoor Advertising',
-      description: 'Premium Advertisement on Metro',
       image: 'portfolio/MetroAd.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
     {
       id: 14,
-      title: 'Big Baazar Truck Advertisement Campaign',
       category: 'Outdoor Advertising',
-      description: 'Premium Advertisement on Truck',
       image: 'portfolio/TruckAd.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
     {
       id: 15,
-      title: 'Y Suites Advertisement Campaign',
       category: 'Retail',
-      description: 'Premium Fencing Near Construction Site',
       image: 'portfolio/CHD2.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
     {
       id: 16,
-      title: 'Y Suites Advertisement Campaign',
       category: 'Retail',
-      description: 'Premium Gate Near Construction Site',
       image: 'portfolio/CHD1.png?w=800&h=400&fit=crop',
-      location: 'Gurgaon/Delhi'
     },
+    {
+      id: 17,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor1.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 18,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor2.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 19,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor3.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 20,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor4.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 21,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor5.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 22,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor6.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 23,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor7.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 24,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor8.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 25,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor9.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 26,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor10.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 27,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor11.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 28,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor12.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 29,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor13.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 30,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor14.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 31,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor15.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 32,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor16.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 33,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor17.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 34,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor18.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 35,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor19.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 36,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor20.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 37,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor21.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 38,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor22.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 39,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor23.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 40,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor24.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 41,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor25.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 42,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor26.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 43,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor27.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 44,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor28.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 45,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor29.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 46,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor30.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 47,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor31.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 48,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor32.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 49,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor33.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 50,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor34.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 51,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor35.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 52,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor36.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 53,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor37.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 54,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor38.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 55,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor39.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 56,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor40.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 57,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor41.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 58,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor42.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 59,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor43.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 60,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor44.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 61,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor45.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 62,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor46.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 63,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor47.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 64,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor48.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 65,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor49.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 66,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor50.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 67,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor51.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 68,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor52.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 69,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor53.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 70,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor54.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 71,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor55.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 72,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor56.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 73,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor57.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 74,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor58.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 75,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor59.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 76,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor60.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 77,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor61.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 78,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor62.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 79,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor63.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 80,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor64.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 81,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor65.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 82,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor66.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 83,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor67.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 84,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor68.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 85,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor69.jpeg?w=800&h=400&fit=crop',
+    },
+    {
+      id: 86,
+      category: 'Outdoor Advertising',
+      image: 'portfolio2/Outdoor70.jpeg?w=800&h=400&fit=crop',
+    }
+
+
 
   ];
 
@@ -200,6 +609,8 @@ export default function Portfolio() {
   { id: 32, name: 'Indriya', category: 'Real Estate' },
   { id: 33, name: 'Aditya Birla Jewellery', category: 'Retail/Jewellery' }
 ];
+
+
 
 
   const achievements = [
@@ -371,13 +782,25 @@ export default function Portfolio() {
                 className="group cursor-pointer rounded-lg overflow-hidden relative h-80 hover:shadow-2xl hover:shadow-orange-600/30 transition-all"
               >
                 {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
+                <LazyImage
+                  src={item.image}
+                  alt={item.title}
+                  className="transform group-hover:scale-110 transition-transform duration-700"
+                >
+
+                  {/* Bottom Left Title */}
+                  <div className="absolute bottom-4 px-2 py-1 bg-black/70 rounded-md left-4 z-10">
+                    <p className="text-orange-400  text-xs font-bold">
+                      {item.category}
+                    </p>
+                  </div>
+                </LazyImage>
+
+
+
 
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-all duration-300"></div>
+                {/* <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-all duration-300"></div> */}
 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col justify-end p-8">
@@ -387,7 +810,6 @@ export default function Portfolio() {
                       {item.title}
                     </h3>
                     <p className="text-gray-300 text-sm mb-3">{item.description}</p>
-                    <p className="text-gray-400 text-xs">📍 {item.location}</p>
                   </div>
                 </div>
               </div>

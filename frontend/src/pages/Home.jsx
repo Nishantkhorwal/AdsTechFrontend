@@ -4,6 +4,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import ContactFormModal from '../components/ContactForm';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import { Navigation, Autoplay } from "swiper/modules";
+
 
 export default function Home() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -18,23 +24,108 @@ export default function Home() {
   
 const portfolioItems = [
     {
-      title: 'Outdoor Activation',
-      category: 'Print & Outdoor',
-      image: 'portfolio/Paras3.png'
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor71.jpeg'
     },
     {
-      title: 'Outdoor Activation',
-      category: 'Print & Outdoor',
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor72.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor73.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor74.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor75.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor76.jpeg'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Activation',
+      image: 'portfolio2/Event1.png'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Event',
+      image: 'portfolio2/Event2.png'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Event',
+      image: 'portfolio2/Event3.png'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Activation',
+      image: 'portfolio2/Event4.jpeg'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Activaton',
+      image: 'portfolio2/Event5.jpeg'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Activaton',
+      image: 'portfolio2/Event7.png'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Event',
+      image: 'portfolio2/Event8.jpeg'
+    },
+    {
+      title: 'Event & Activation',
+      category: 'Event',
+      image: 'portfolio2/Event9.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor77.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor78.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor79.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
+      image: 'portfolio2/Outdoor80.jpeg'
+    },
+    {
+      title: 'Outdoor',
+      category: 'Outdoor',
       image: 'portfolio/TruckAd.png'
     },
     {
-      title: 'Event Marketing',
+      title: 'Event & Activation',
       category: 'Events',
       image: 'portfolio/Event1.png'
     },
     {
-      title: 'Outdoor Activation',
-      category: 'Print & Outdoor',
+      title: 'Outdoor',
+      category: 'Outdoor',
       image: 'portfolio/MetroAd.png'
     }
   ];
@@ -266,38 +357,67 @@ const handleSubmit = async (e) => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="relative">
+
+          {/* LEFT ARROW */}
+          <div className="custom-prev absolute top-1/2 -left-7 z-30 -translate-y-1/2 cursor-pointer">
+            <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:bg-orange-600 transition">
+              ←
+            </div>
+          </div>
+
+          {/* RIGHT ARROW */}
+          <div className="custom-next absolute top-1/2 -right-7 z-30 -translate-y-1/2 cursor-pointer">
+            <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:bg-orange-600 transition">
+              →
+            </div>
+          </div>
+
+          {/* SWIPER */}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
             {portfolioItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="h-64 rounded-lg overflow-hidden cursor-pointer group relative hover:shadow-2xl hover:shadow-orange-600/50 transition-all"
-              >
+              <SwiperSlide key={idx}>
+                <div className="h-72 rounded-xl overflow-hidden cursor-pointer group relative">
+                  
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                    loading="lazy"
+                  />
 
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
+                  <div className="relative z-10 flex flex-col justify-end h-full p-6">
+                    <h3 className="text-xl font-bold mb-1">{item.title || "Project"}</h3>
+                    <p className="text-orange-400 text-sm">{item.category}</p>
+                  </div>
 
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all"></div>
-
-                <div className="relative z-10 flex flex-col justify-end h-full p-8">
-                  <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-orange-400 text-sm">{item.category}</p>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
 
-          <div className="text-center mt-12">
-            <Link to="/portfolio" className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50">
-              View Portfolio
-            </Link>
-          </div>
+        </div>
+
+        <div className="text-center mt-20"> <Link to="/portfolio" className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-black font-bold transition-all hover:shadow-lg hover:shadow-orange-600/50"> View Portfolio </Link> </div>
+
 
         </div>
       </section>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
